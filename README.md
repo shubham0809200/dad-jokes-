@@ -6,6 +6,10 @@ A Dart package for getting random dad jokes from [icanhazdadjoke.com](https://ic
 
 To use this package, add `dad_jokes` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
+## Screenshots
+
+![Screenshot 1](../dad_joke/assets/images/screenshot1.png)
+
 ### Example
 
 ```dart
