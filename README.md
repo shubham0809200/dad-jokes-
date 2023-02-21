@@ -1,4 +1,4 @@
-# dad-jokes- [![pub package](https://img.shields.io/pub/v/dad_jokes.svg)](https://pub.dartlang.org/packages/dad_jokes)
+# dad-jokes- [![pub package](https://img.shields.io/pub/v/dad_jokes.svg)](https://pub.dartlang.org/packages/dad_joke)
 
 A Dart package for getting random dad jokes from [icanhazdadjoke.com](https://icanhazdadjoke.com/). The `dad_joke` package in Flutter provides a simple and fun way to incorporate dad jokes into your app. It connects to the icanhazdadjoke API to fetch random jokes and display them in your app. With a few lines of code, you can add a touch of humor to your app and entertain your users with dad jokes that are sure to make them smile. Whether you're creating a lighthearted app or just want to add some fun to your existing app, the `dad_joke` package is a great choice.
 

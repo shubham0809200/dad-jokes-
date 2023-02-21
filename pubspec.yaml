@@ -1,6 +1,6 @@
 name: dad_joke
-description: A package to get random dad jokes from the internet.
-version: 0.0.1
+description: A package to get random dad jokes from the internet and display them in your app.
+version: 0.0.2
 homepage: https://github.com/shubham0809200/dad-jokes-
 
 environment:
