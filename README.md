@@ -61,6 +61,7 @@ class HomeScreen extends StatelessWidget {
           reloadIconColor: Colors.red, // get Icon Color
           onLoadView: CircularProgressIndicator(), // get Loader to show
           onLoadViewColor: Colors.red, // get loader color
+          width: 300, // get width of the card
         ),
       ),
     );
@@ -78,6 +79,7 @@ class HomeScreen extends StatelessWidget {
 | reloadIconColor | Color?    | Color of the reload icon.                |
 | onLoadView      | Widget?   | Widget to show when the joke is loading. |
 | onLoadViewColor | Color?    | Color of the loading widget.             |
+| width           | double?   | Width of the joke card.                  |
 
 ## Also Need Package
 

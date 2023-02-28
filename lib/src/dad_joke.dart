@@ -2,16 +2,35 @@ import 'package:dad_joke/src/api/api_data.dart';
 import 'package:flutter/material.dart';
 
 class DadJoke extends StatefulWidget {
-  // get Background Color
+  ///
+  /// [backgroundColor] is the background color of the container
+  ///
   final Color? backgroundColor;
-  // get Icon to show
+
+  ///
+  /// [reloadIcon] is the icon to reload the joke
+  ///
   final IconData? reloadIcon;
-  // get Icon Color
+
+  ///
+  /// [reloadIconColor] is the color of the reload icon
+  ///
   final Color? reloadIconColor;
-  // get Loader to show
+
+  ///
+  /// [onLoadView] is the widget to show when the joke is loading
+  ///
   final Widget? onLoadView;
-  // get loader color
+
+  ///
+  /// [onLoadViewColor] is the color of the text in [onLoadView]
+  ///
   final Color? onLoadViewColor;
+
+  ///
+  /// [width] is the width of the container
+  ///
+  final double? width;
 
   const DadJoke({
     Key? key,
@@ -20,6 +39,7 @@ class DadJoke extends StatefulWidget {
     this.reloadIconColor,
     this.onLoadView,
     this.onLoadViewColor,
+    this.width,
   }) : super(key: key);
 
   @override
@@ -33,21 +53,42 @@ class _DadJokeState extends State<DadJoke> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
+          ///
+          /// [backgroundColor] is the background color of the container
+          ///
           color: widget.backgroundColor ?? Colors.white,
           padding: const EdgeInsets.all(12),
-          width: MediaQuery.of(context).size.width * 0.8,
+
+          ///
+          /// [width] is the width of the container
+          ///
+          width: widget.width ?? MediaQuery.of(context).size.width * 0.8,
           child: FutureBuilder<String>(
+            ///
+            /// [API.getJoke()] is the function to get the joke from the API
+            ///
             future: API.getJoke(),
+
             builder: (context, snapshot) {
+              ///
+              /// [snapshot] is the data returned from the API
+              ///
               if (snapshot.hasData) {
                 return Text(snapshot.data!);
               } else if (snapshot.hasError) {
                 return Text('Error: ${snapshot.error}');
               } else {
+                ///
+                /// [onLoadView] is the widget to show when the joke is loading
+                ///
                 return widget.onLoadView ??
                     Text(
                       'Loading...',
                       style: TextStyle(
+
+                          ///
+                          /// [onLoadViewColor] is the color of the text in [onLoadView]
+                          ///
                           color: widget.onLoadViewColor ?? Colors.black),
                     );
               }
@@ -57,11 +98,21 @@ class _DadJokeState extends State<DadJoke> {
         IconButton(
           onPressed: () {
             setState(() {
-              // call API.getJoke() again
+              ///
+              /// [API.getJoke()] is the function to get the joke from the API
+              ///
               API.getJoke();
             });
           },
+
+          ///
+          /// [reloadIcon] is the icon to reload the joke
+          ///
           icon: Icon(widget.reloadIcon ?? Icons.refresh,
+
+              ///
+              /// [reloadIconColor] is the color of the reload icon
+              ///
               color: widget.reloadIconColor ?? Colors.black),
         ),
       ],
